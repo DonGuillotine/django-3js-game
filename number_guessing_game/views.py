@@ -25,7 +25,9 @@ def index(request):
         elif guess > number:
             hint_text = "The number is smaller than your guess. Try again."
 
-        context = {
-            'max_attempts': max_attempts,
-            'hint_text': hint_text,
-        }
+    context = {
+        'max_attempts': max_attempts,
+        'hint_text': hint_text,
+    }
+
+    return render(request, 'index.html', context)
