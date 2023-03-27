@@ -34,8 +34,8 @@ def game_view(request):
         game.save()
 
         # Render to game.html
-        return render(request, 'game.html', {'message': message})
+        return render(request, 'index.html', {'message': message})
     
     else:
         game = Game.objects.create(number=random.randint(0, 999))
-        return render(request, 'game.html')
+        return render(request, 'index.html')
