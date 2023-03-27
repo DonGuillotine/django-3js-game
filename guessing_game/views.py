@@ -1,3 +1,4 @@
+import random
 from django.shortcuts import render, redirect
 from .models import Game
 from random import randint
