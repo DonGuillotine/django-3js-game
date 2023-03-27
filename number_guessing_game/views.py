@@ -24,3 +24,7 @@ def index(request):
 
         elif guess > number:
             hint_text = "The number is smaller than your guess. Try again."
+
+        context = {
+            
+        }
