@@ -11,3 +11,4 @@ def index(request):
 
     if request.method == 'POST':
         guess = int(request.POST['guess'])
+        attempts += 1
