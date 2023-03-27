@@ -26,5 +26,6 @@ def index(request):
             hint_text = "The number is smaller than your guess. Try again."
 
         context = {
-            
+            'max_attempts': max_attempts,
+
         }
