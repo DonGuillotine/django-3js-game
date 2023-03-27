@@ -7,3 +7,7 @@ def index(request):
     attempts = 0
     max_attempts = 10
     hint_text = ""
+
+
+    if request.method == 'POST':
+        guess = int(request.POST['guess'])
