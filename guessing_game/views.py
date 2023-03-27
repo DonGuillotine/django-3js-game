@@ -1,34 +1,31 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Game
 from random import randint
 
 
-def index(request):
-    number = randint(0, 999)
-    attempts = 0
-    max_attempts = 10
-    hint_text = ""
-
-
+def game_view(request):
+    # Checking for a POST request
     if request.method == 'POST':
+        # Get the guess from the user
         guess = int(request.POST['guess'])
-        attempts += 1
+        # Get the first item in the Game Model
+        game = Game.objects.first()
+        # Increase the attempts by one
+        game.attempts += 1
 
-        if guess == number:
-            hint_text = f"Congratulations! You guessed the number in {attempts} attempts."
+        if guess == game.number:
+            message = f'Congratulations! You guessed the number in {game.attempts} attempts.'
+            return render(request, 'result.html', {'message': message})
+        
+        elif guess < game.number:
+            message = 'The number is greater than your guess. Try again!'
 
-        elif attempts == max_attempts:
-            hint_text = f"Sorry, you have used up all your attempts. The number was {number}."
+        else:
+            message = 'The number is smaller than your guess. Try again!'
 
-        elif guess < number:
-            hint_text = "The number is greater than your guess. Try again."
-
-        elif guess > number:
-            hint_text = "The number is smaller than your guess. Try again."
-
-    context = {
-        'max_attempts': max_attempts,
-        'hint_text': hint_text,
-    }
-
-    return render(request, 'index.html', context)
+        game.save()
+        return render(request, 'game.html', {'message': message})
+    
+    else:
+        game = Game.objects.create(number=random.randint(0, 999))
+        return render(request, 'game.html')
