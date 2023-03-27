@@ -6,10 +6,13 @@ from random import randint
 def game_view(request):
     # Checking for a POST request
     if request.method == 'POST':
+
         # Get the guess from the user
         guess = int(request.POST['guess'])
+
         # Get the first item in the Game Model
         game = Game.objects.first()
+        
         # Increase the attempts by one
         game.attempts += 1
 
