@@ -15,3 +15,6 @@ def index(request):
 
         if guess == number:
             hint_text = f"Congratulations! You guessed the number in {attempts} attempts."
+
+        elif attempts == max_attempts:
+            hint_text = f"Sorry, you have used up all your attempts. The number was {number}."
