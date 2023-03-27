@@ -18,3 +18,6 @@ def index(request):
 
         elif attempts == max_attempts:
             hint_text = f"Sorry, you have used up all your attempts. The number was {number}."
+
+        elif guess < number:
+            hint_text = "The number is greater than your guess. Try again."
