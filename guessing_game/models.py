@@ -4,3 +4,4 @@ from django.db import models
 
 class Game(models.Model):
     number = models.IntegerField()
+    attempts = models.IntegerField(default=0)
