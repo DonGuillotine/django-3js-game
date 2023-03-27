@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Game
 from random import randint
 
 
