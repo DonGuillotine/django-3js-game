@@ -12,3 +12,6 @@ def index(request):
     if request.method == 'POST':
         guess = int(request.POST['guess'])
         attempts += 1
+
+        if guess == number:
+            hint_text = f"Congratulations! You guessed the number in {attempts} attempts."
