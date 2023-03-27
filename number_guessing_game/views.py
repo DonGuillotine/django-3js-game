@@ -27,5 +27,5 @@ def index(request):
 
         context = {
             'max_attempts': max_attempts,
-
+            'hint_text': hint_text,
         }
