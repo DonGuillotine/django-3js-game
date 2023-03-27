@@ -12,21 +12,27 @@ def game_view(request):
 
         # Get the first item in the Game Model
         game = Game.objects.first()
-        
+
         # Increase the attempts by one
         game.attempts += 1
 
+        # Condition for a successful guess
         if guess == game.number:
             message = f'Congratulations! You guessed the number in {game.attempts} attempts.'
             return render(request, 'result.html', {'message': message})
         
+        # Condition for a higher guess
         elif guess < game.number:
             message = 'The number is greater than your guess. Try again!'
 
+        # Condition for a smaller guess
         else:
             message = 'The number is smaller than your guess. Try again!'
 
+        # Save to database
         game.save()
+
+        # Render to game.html
         return render(request, 'game.html', {'message': message})
     
     else:
