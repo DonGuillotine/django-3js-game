@@ -15,6 +15,7 @@
     <form method="post">
         {% csrf_token %}
         <label for="guess">Enter your guess:</label>
+        <input type="number" name="guess" id="guess" min="0" max="999" required>
     </form>
 </body>
 </html>
