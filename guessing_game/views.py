@@ -19,6 +19,7 @@ def home(request):
         if request.session['attempts'] >= 10:
             message = 'Sorry! You have used all 10 attempts. The secret number was {}.'.format(secret_number)
             request.session.flush()
+            return render(request, 'results.html', {'message': message})
 
         return render(request, 'index.html', {'message': message})
     else:
