@@ -38,8 +38,7 @@ def game_view(request):
         game.save()
         # Render to index.html
         return render(request, 'index.html', {'message': message})
-        # Save to database
-        game.save()
+
 
 
     
