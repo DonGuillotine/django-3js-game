@@ -33,6 +33,8 @@ def game_view(request):
         if game.attempts >= 10:
             message = f'Sorry, you lost! The number was {game.number}.'
             return render(request, 'result.html', {'message': message})
+        game.save()
+        return render(request, 'index.html', {'message': message})
         # Save to database
         game.save()
 
