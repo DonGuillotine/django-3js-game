@@ -1,43 +1,28 @@
+from django.shortcuts import render
 import random
-from django.shortcuts import render, redirect
-from .models import Game
-from random import randint
 
-
-def game_view(request):
-    # Checking for a POST request
+def home(request):
     if request.method == 'POST':
-
-        # Get the guess from the user
+        secret_number = request.session['secret_number']
         guess = int(request.POST['guess'])
+        request.session['attempts'] += 1
 
-        # Get the first item in the Game Model
-        game = Game.objects.first()
-
-        # Increase the attempts by one
-        game.attempts += 1
-
-        # Condition for a successful guess
-        if guess == game.number:
-            message = f'Congratulations! You guessed the number in {game.attempts} attempts.'
-            return render(request, 'result.html', {'message': message})
-        
-        # Condition for a higher guess
-        elif guess < game.number:
-            message = 'The number is greater than your guess. Try again!'
-
-        # Condition for a smaller guess
+        if guess == secret_number:
+            message = 'Congratulations! You guessed the number in {} attempts.'.format(request.session['attempts'])
+            request.session.flush()
+            return render(request, 'results.html', {'message': message})
+        elif guess < secret_number:
+            message = 'The number is greater than {}'.format(guess)
         else:
-            message = 'The number is smaller than your guess. Try again!'
+            message = 'The number is smaller than {}'.format(guess)
 
-        # Condition for 10 Limits
-        if game.attempts >= 10:
-            message = f'Sorry, you lost! The number was {game.number}.'
-            return render(request, 'result.html', {'message': message})
-        # Save to database
-        game.save()
-        # Render to index.html
-        return render(request, 'index.html', {'message': message})  
+        if request.session['attempts'] >= 10:
+            message = 'Sorry! You have used all 10 attempts. The secret number was {}.'.format(secret_number)
+            request.session.flush()
+
+        return render(request, 'index.html', {'message': message})
     else:
-        game = Game.objects.create(number=random.randint(0, 999))
+        secret_number = random.randint(0, 999)
+        request.session['secret_number'] = secret_number
+        request.session['attempts'] = 0
         return render(request, 'index.html')

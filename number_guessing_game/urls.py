@@ -19,5 +19,5 @@ from guessing_game import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.game_view, name='game'),
+    path('', views.home, name='home'),
 ]
