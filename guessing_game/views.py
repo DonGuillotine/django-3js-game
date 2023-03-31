@@ -30,10 +30,13 @@ def game_view(request):
         else:
             message = 'The number is smaller than your guess. Try again!'
 
+        # Condition for 10 Limits
         if game.attempts >= 10:
             message = f'Sorry, you lost! The number was {game.number}.'
             return render(request, 'result.html', {'message': message})
+        # Save to database
         game.save()
+        # Render to index.html
         return render(request, 'index.html', {'message': message})
         # Save to database
         game.save()
