@@ -6,6 +6,17 @@
   box-sizing: inherit;
 }
 
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -9999;
+}
+
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -14,8 +25,6 @@ html {
 body {
   font-family: 'Press Start 2P', sans-serif;
   color: #eee;
-  background-color: #222;
-  /* background-color: #60b347; */
 }
 
 /* LAYOUT */
@@ -129,7 +138,7 @@ h1 {
     z-index: 1;
   }
   #large-header {
-    background-image: url("https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg");
+    background-image: url("demo-1-bg.jpg");
   }
   .main-title {
     position: absolute;

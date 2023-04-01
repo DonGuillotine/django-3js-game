@@ -10,7 +10,6 @@
     <section class="left">
       <form method="post">
         {% csrf_token %}
-        <label for="guess">Guess:</label>
         <input type="number" class="guess" name="guess" min="0" max="999" required>
         <br><br>
         <button class="btn check" type="submit">Submit</button>

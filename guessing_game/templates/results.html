@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Result</h1>
-  <p>{{ message }}</p>
+<header>
+  <h1>{{ message }}</h1>
+</header>
+<div style="left: 42%; position: absolute;">
+  <a href="/" class="btn check">Try again</a>
+</div>
 {% endblock %}
