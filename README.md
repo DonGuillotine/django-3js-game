@@ -1,1 +1,1 @@
-# A Number Guessing gamw with Python and Three JS
+# A Number Guessing game with Python and Three JS
