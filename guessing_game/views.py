@@ -23,6 +23,7 @@ def home(request):
         else:
             message = 'The number is smaller than {}'.format(guess)
 
+        # Checking if attempts are used up
         if request.session['attempts'] >= 10:
             message = 'Sorry! You have used all 10 attempts. The secret number was {}.'.format(secret_number)
             request.session.flush()
