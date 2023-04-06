@@ -11,6 +11,7 @@ def home(request):
         # Increase by 1
         request.session['attempts'] += 1
 
+        # If the user answers correctly
         if guess == secret_number:
             message = 'Congratulations! You guessed the number in {} attempts.'.format(request.session['attempts'])
             request.session.flush()
