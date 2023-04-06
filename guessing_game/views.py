@@ -31,6 +31,7 @@ def home(request):
 
         return render(request, 'index.html', {'message': message})
     else:
+        # Generate random number from 0 - 999
         secret_number = random.randint(0, 999)
         request.session['secret_number'] = secret_number
         request.session['attempts'] = 0
