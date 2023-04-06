@@ -6,7 +6,9 @@ def home(request):
     if request.method == 'POST':
         # Add Secret number to Session
         secret_number = request.session['secret_number']
+        # Get the guess and convert to integer
         guess = int(request.POST['guess'])
+        # Increase by 1
         request.session['attempts'] += 1
 
         if guess == secret_number:
