@@ -98,6 +98,7 @@
         else animateHeader = true;
     }
 
+    // Resize function
     function resize() {
         width = window.innerWidth;
         height = window.innerHeight;
