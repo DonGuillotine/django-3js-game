@@ -16,6 +16,8 @@ def home(request):
             message = 'Congratulations! You guessed the number in {} attempts.'.format(request.session['attempts'])
             request.session.flush()
             return render(request, 'results.html', {'message': message})
+        
+        # Else if the guess is greater
         elif guess < secret_number:
             message = 'The number is greater than {}'.format(guess)
         else:
