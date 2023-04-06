@@ -2,7 +2,9 @@ from django.shortcuts import render
 import random
 
 def home(request):
+    # Check for POST request
     if request.method == 'POST':
+        # Add Secret number to Session
         secret_number = request.session['secret_number']
         guess = int(request.POST['guess'])
         request.session['attempts'] += 1
