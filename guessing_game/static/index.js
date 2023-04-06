@@ -92,6 +92,7 @@
         target.y = posy;
     }
 
+    // Scrollcheck function
     function scrollCheck() {
         if(document.body.scrollTop > height) animateHeader = false;
         else animateHeader = true;
