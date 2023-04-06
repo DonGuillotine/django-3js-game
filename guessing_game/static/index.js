@@ -77,6 +77,7 @@
         window.addEventListener('resize', resize);
     }
 
+    // MouseMove function
     function mouseMove(e) {
         var posx = posy = 0;
         if (e.pageX || e.pageY) {
