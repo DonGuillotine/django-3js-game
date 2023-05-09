@@ -35,3 +35,6 @@ The user interface was built using Three.js, a lightweight and easy-to-use 3D li
 
 Technologies Used
 -----------------
+
+-   Django Framework
+-   Three.js
