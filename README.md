@@ -11,3 +11,8 @@ How to Play
 1.  Clone the repository to your local machine using the command below:
 
 `git clone https://github.com/your_username/number-guessing-game-django.git`
+
+
+2.  Install the required packages by running the following command:
+
+`pip install -r requirements.txt`
