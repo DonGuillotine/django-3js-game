@@ -32,3 +32,4 @@ Technologies Used
 -   Three.js
 -   HTML
 -   CSS
+-   JavaScript
