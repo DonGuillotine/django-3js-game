@@ -23,3 +23,11 @@ How to Play
   `python manage.py runserver`
 
 4.  Open your web browser and go to `http://localhost:8000/` to play the game.
+
+
+User Interface
+--------------
+
+The user interface was built using Three.js, a lightweight and easy-to-use 3D library. The game board displays a range of numbers from 0 to 999, and the user can enter their guess in the input field provided.
+
+![Screenshot (236)](https://github.com/DonGuillotine/django-3js-game/assets/89584431/515859ce-b927-49df-8d12-de26d52e28f7)
