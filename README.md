@@ -16,3 +16,8 @@ How to Play
 2.  Install the required packages by running the following command:
 
 `pip install -r requirements.txt`
+
+
+3.  Start the Django server by running the following command:
+
+`python manage.py runserver`
