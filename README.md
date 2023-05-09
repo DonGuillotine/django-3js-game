@@ -30,3 +30,5 @@ Technologies Used
 
 -   Django Framework
 -   Three.js
+-   HTML
+-   CSS
