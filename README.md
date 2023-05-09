@@ -12,10 +12,7 @@ How to Play
 
 -   Install the required packages by running the following command: `pip install -r requirements.txt`
 
-
--   Start the Django server by running the following command:
-
-  `python manage.py runserver`
+-   Start the Django server by running the following command: `python manage.py runserver`
 
 -   Open your web browser and go to `http://localhost:8000/` to play the game.
 
