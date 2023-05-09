@@ -36,3 +36,4 @@ Technologies Used
 
 Contributions
 -------------
+Contributions to this project are always welcome. If you find a bug or have a feature request, please open an issue on the repository.
