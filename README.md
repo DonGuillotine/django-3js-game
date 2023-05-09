@@ -21,3 +21,5 @@ How to Play
 3.  Start the Django server by running the following command:
 
 `python manage.py runserver`
+
+4.  Open your web browser and go to `http://localhost:8000/` to play the game.
