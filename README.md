@@ -33,3 +33,6 @@ Technologies Used
 -   HTML
 -   CSS
 -   JavaScript
+
+Contributions
+-------------
