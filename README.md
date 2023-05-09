@@ -8,10 +8,7 @@ Welcome to the Number Guessing Game built using the Django Framework. This game 
 How to Play
 -----------
 
--   Clone the repository to your local machine using the command below:
-
-  `git clone https://github.com/your_username/number-guessing-game-django.git`
-
+-   Clone the repository to your local machine using the command: `git clone https://github.com/your_username/number-guessing-game-django.git`
 
 -   Install the required packages by running the following command:
 
