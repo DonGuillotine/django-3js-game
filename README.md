@@ -31,3 +31,7 @@ User Interface
 The user interface was built using Three.js, a lightweight and easy-to-use 3D library.
 
 ![Screenshot (236)](https://github.com/DonGuillotine/django-3js-game/assets/89584431/515859ce-b927-49df-8d12-de26d52e28f7)
+
+
+Technologies Used
+-----------------
